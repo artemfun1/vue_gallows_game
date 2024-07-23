@@ -1,15 +1,13 @@
 <template>
-       <div class="notification-container" :class="{ show: isVisible}" >
-        <p>Вы уже вводили этот символ</p>
-      </div>
+  <div class="notification-container" :class="{ show: isVisible }">
+    <p>Вы уже вводили этот символ</p>
+  </div>
 </template>
-
 
 <script setup lang="ts">
 import { ref } from 'vue'
 
-
-const isVisible= ref<boolean>(false)
+const isVisible = ref<boolean>(false)
 
 const open = () => {
   isVisible.value = true
@@ -20,8 +18,7 @@ const close = () => {
 }
 
 defineExpose({
-  open,close
+  open,
+  close
 })
-
-
 </script>

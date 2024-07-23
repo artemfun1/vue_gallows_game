@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import axios from 'axios'
-import { computed, onMounted, ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import GameFigure from './components/GameFigure.vue'
 import GameHeader from './components/GameHeader.vue'
 import GameNotification from './components/GameNotification.vue'
@@ -10,16 +10,15 @@ import GameWrongLetters from './components/GameWrongLetters.vue'
 
 const getRandomName = async () => {
   try {
-     const { data } = await axios.get<{FirstName:string}>(
-    'https://api.randomdatatools.ru/?unescaped=false&typeName=classic&params=FirstName'
-  )
-  console.log(data.FirstName)
-  word.value = data.FirstName.toLowerCase()
+    const { data } = await axios.get<{ FirstName: string }>(
+      'https://api.randomdatatools.ru/?unescaped=false&typeName=classic&params=FirstName'
+    )
+    console.log(data.FirstName)
+    word.value = data.FirstName.toLowerCase()
   } catch (error) {
     console.log(error)
-    word.value=''
+    word.value = ''
   }
- 
 }
 
 getRandomName()
@@ -69,11 +68,10 @@ window.addEventListener('keydown', ({ key }) => {
   }
 })
 
-const restart = async() => {
+const restart = async () => {
   await getRandomName()
   letters.value = []
   popup.value?.close()
-  
 }
 </script>
 

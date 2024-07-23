@@ -1,11 +1,6 @@
 <template>
-
-<h1>Виселица</h1>
-      <p>Отгадайте имя - введите букву</p>
-
-
-
+  <h1>Виселица</h1>
+  <p>Отгадайте имя - введите букву</p>
 </template>
 
-
-<script setup></script>
+<script setup lang="ts"></script>

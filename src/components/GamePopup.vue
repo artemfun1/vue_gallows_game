@@ -5,7 +5,7 @@
 
       <template v-if="gameStatus === 'lose'">
         <h2>Вы проиграли. 😕</h2>
-        <h3>Было имя: {{loseWord}}</h3>
+        <h3>Было имя: {{ loseWord }}</h3>
       </template>
 
       <button @click="emit('restart')">Сыграть еще раз</button>
@@ -27,9 +27,8 @@ const gameStatus = ref<GameStatus | null>(null)
 
 const isVisible = ref<boolean>(false)
 
-const open = (status: GameStatus,word?:string) => {
-
-  if(status==='lose' && word!== undefined){
+const open = (status: GameStatus, word?: string) => {
+  if (status === 'lose' && word !== undefined) {
     loseWord.value = word
   }
 
